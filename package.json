@@ -1,12 +1,18 @@
 {
-  "name": "ouzou_officiel",
+  "name": "ouzo_officiel",
   "version": "1.0.0",
-  "description": "Bot WhatsApp MD avec 300 commandes",
-  "main": "src/bot.js",
+  "description": "Bot WhatsApp Ouzou_officiel",
+  "main": "main.js",
+  "type": "module",
   "scripts": {
-    "start": "node src/bot.js"
+    "start": "node main.js",
+    "scan": "node server.js"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.6.0"
+    "@whiskeysockets/baileys": "^6.6.0",
+    "pino": "^8.12.0",
+    "node-cron": "^3.0.2",
+    "express": "^4.18.2",
+    "qrcode": "^1.5.1"
   }
 }
