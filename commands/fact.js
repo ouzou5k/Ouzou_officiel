@@ -1,14 +1,14 @@
 export default {
   name: "fact",
-  description: "Envoie un fait aléatoire",
+  description: "Donne un fait intéressant",
   category: "fun",
-  execute: async (sock, m, args) => {
+  execute: async (sock, m) => {
     const facts = [
-      "Saviez-vous ? Les chats ont 32 muscles dans chaque oreille.",
-      "Saviez-vous ? Le soleil est 109 fois plus large que la Terre.",
-      "Saviez-vous ? L’abeille peut reconnaître les visages humains."
+      "🌍 70% de la Terre est recouverte d’eau.",
+      "🧠 Le cerveau humain contient environ 86 milliards de neurones.",
+      "🐝 Les abeilles peuvent reconnaître les visages humains."
     ];
-    const fact = facts[Math.floor(Math.random() * facts.length)];
-    await sock.sendMessage(m.key.remoteJid, { text: fact }, { quoted: m });
+    const random = facts[Math.floor(Math.random() * facts.length)];
+    await sock.sendMessage(m.key.remoteJid, { text: random }, { quoted: m });
   }
 };
