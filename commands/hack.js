@@ -1,11 +1,12 @@
 export default {
   name: "hack",
-  description: "Jeu de simulation hack",
+  description: "Fausse commande de hacking",
   category: "fun",
   execute: async (sock, m, args) => {
-    const cible = args[0] || "utilisateur";
-    const pourcent = Math.floor(Math.random() * 101);
-    const msg = `💻 Hacking ${cible} ... ${pourcent}% terminé 🕵️‍♂️`;
-    await sock.sendMessage(m.key.remoteJid, { text: msg }, { quoted: m });
+    const user = args[0] || "cible inconnue";
+    await sock.sendMessage(m.key.remoteJid, { text: `💻 Hack en cours de ${user}... 🔥` }, { quoted: m });
+    setTimeout(() => {
+      sock.sendMessage(m.key.remoteJid, { text: `✅ Hack de ${user} terminé avec succès 😈` }, { quoted: m });
+    }, 3000);
   }
 };
